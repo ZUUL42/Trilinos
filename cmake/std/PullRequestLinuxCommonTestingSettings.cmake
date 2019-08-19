@@ -28,7 +28,7 @@ set (CMAKE_BUILD_TYPE RELEASE CACHE STRING "Set by default for PR testing")
 set (Trilinos_ENABLE_DEBUG ON CACHE BOOL "Set by default for PR testing")
 set (BUILD_SHARED_LIBS ON CACHE BOOL "Set by default for PR testing")
 set (Trilinos_ENABLE_DEBUG_SYMBOLS ON CACHE BOOL "Set by default for PR testing")
-set (Trilinos_ENABLE_EXPLICIT_INSTANTIATION ON CACHE BOOL "Set by default for PR testing")
+set (Trilinos_ENABLE_EXPLICIT_INSTANTIATION OFF CACHE BOOL "Set by default for PR testing")
 set (Trilinos_ENABLE_SECONDARY_TESTED_CODE OFF CACHE BOOL "Set by default for PR testing")
 set (Teuchos_ENABLE_DEFAULT_STACKTRACE OFF CACHE BOOL "Set by default for PR testing")
 
