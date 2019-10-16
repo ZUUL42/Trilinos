@@ -25,7 +25,7 @@ set (Trilinos_CTEST_USE_NEW_AAO_FEATURES           ON CACHE BOOL "Set by default
 # Options from cmake/std/MpiReleaseDebugSharedPtSettings.cmake
 
 set (TPL_ENABLE_MPI                         OFF CACHE BOOL "Set by default for PR testing")
-set (CMAKE_BUILD_TYPE RELEASE CACHE STRING "Set by default for PR testing")
+set (CMAKE_BUILD_TYPE DEBUG CACHE STRING "Set by default for PR testing")
 set (Trilinos_ENABLE_DEBUG                  ON  CACHE BOOL "Set by default for PR testing")
 set (BUILD_SHARED_LIBS ON CACHE BOOL "Set by default for PR testing")
 set (Trilinos_ENABLE_DEBUG_SYMBOLS          ON  CACHE BOOL "Set by default for PR testing")
