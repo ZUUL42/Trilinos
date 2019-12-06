@@ -34,7 +34,7 @@ include("${CMAKE_CURRENT_LIST_DIR}/PullRequestLinuxCommonTestingSettings.cmake")
 
 # Set deprecated code flags
 set(KOKKOS_ENABLE_DEPRECATED_CODE OFF CACHE BOOL "Set deprecated code flags")
-set(Tpetra_ENABLE_DEPRECATED_CODE OFF CACHE BOOL "Set deprecated code flags")
+#set(Tpetra_ENABLE_DEPRECATED_CODE OFF CACHE BOOL "Set deprecated code flags")
 set(Belos_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")
 set(Epetra_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")
 set(Ifpack2_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")
