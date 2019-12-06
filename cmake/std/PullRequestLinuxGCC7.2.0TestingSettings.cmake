@@ -24,3 +24,22 @@ include("${CMAKE_CURRENT_LIST_DIR}/PullRequestLinuxCommonTestingSettings.cmake")
 
 # Adding warnings as errors flags to this PR build
 set(CMAKE_CXX_FLAGS "-Wall -Wno-clobbered -Wno-vla -Wno-pragmas -Wno-unknown-pragmas -Wno-unused-local-typedefs -Wno-literal-suffix -Wno-deprecated-declarations -Wno-misleading-indentation -Wno-int-in-bool-context -Wno-maybe-uninitialized -Wno-nonnull-compare -Wno-address -Wno-inline -DTRILINOS_HIDE_DEPRECATED_HEADER_WARNINGS -Werror" CACHE STRING "Warnings as errors settings")
+
+# Set deprecated code flags
+set(KOKKOS_ENABLE_DEPRECATED_CODE OFF CACHE BOOL "Set deprecated code flags")
+set(Tpetra_ENABLE_DEPRECATED_CODE OFF CACHE BOOL "Set deprecated code flags") #fails in configuration
+set(Belos_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")
+set(Epetra_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")
+set(Ifpack2_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")
+set(Ifpack2_ENABLE_DEPRECATED_CODE OFF CACHE BOOL "Set deprecated code flags")
+set(MueLu_ENABLE_DEPRECATED_CODE OFF CACHE BOOL "Set deprecated code flags")
+set(Panzer_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")
+set(Phalanx_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")
+set(RTop_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")
+set(STK_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")
+set(Teuchos_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")
+set(Thyra_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")
+set(Claps_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")
+set(GlobiPack_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")
+set(OptiPack_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")
+set(Trios_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")

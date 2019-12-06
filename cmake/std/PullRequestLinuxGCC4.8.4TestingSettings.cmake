@@ -32,3 +32,21 @@ set (BUILD_SHARED_LIBS OFF CACHE BOOL "Off by default for PR testing in GCC 4.8.
 
 include("${CMAKE_CURRENT_LIST_DIR}/PullRequestLinuxCommonTestingSettings.cmake")
 
+# Set deprecated code flags
+set(KOKKOS_ENABLE_DEPRECATED_CODE OFF CACHE BOOL "Set deprecated code flags")
+set(Tpetra_ENABLE_DEPRECATED_CODE OFF CACHE BOOL "Set deprecated code flags")
+set(Belos_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")
+set(Epetra_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")
+set(Ifpack2_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")
+set(Ifpack2_ENABLE_DEPRECATED_CODE OFF CACHE BOOL "Set deprecated code flags")
+set(MueLu_ENABLE_DEPRECATED_CODE OFF CACHE BOOL "Set deprecated code flags")
+set(Panzer_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")
+set(Phalanx_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")
+set(RTop_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")
+set(STK_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")
+set(Teuchos_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")
+set(Thyra_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")
+set(Claps_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")
+set(GlobiPack_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")
+set(OptiPack_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")
+set(Trios_HIDE_DEPRECATED_CODE ON CACHE BOOL "Set deprecated code flags")
