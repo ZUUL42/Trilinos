@@ -675,7 +675,7 @@ class Test_setEnviron(unittest.TestCase):
         """Find the function"""
         PR_name = 'Trilinos_pullrequest_cuda_9.2'
         expected_list = [mock.call('load', 'git/2.10.1'),
-                         mock.call('load', 'devpack/20180521/openmpi/2.1.2/gcc/7.2.0/cuda/9.2.88'),
+                         mock.call('load', 'devpack/20190404/openmpi/4.0.1/gcc/7.2.0/cuda/10.1.105'),
                          mock.call('swap', 'openblas/0.2.20/gcc/7.2.0', 'netlib/3.8.0/gcc/7.2.0'),]
         expected_env = {'OMPI_CXX':
                        os.path.join(self.jenkins_workspace,

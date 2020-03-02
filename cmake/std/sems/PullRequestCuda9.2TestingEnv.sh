@@ -4,7 +4,7 @@
 # usage: $ source PullRequestCUDA9.2TestingEnv.sh
 
 module load git/2.10.1
-module load devpack/20180521/openmpi/2.1.2/gcc/7.2.0/cuda/9.2.88
+module load devpack/20190404/openmpi/4.0.1/gcc/7.2.0/cuda/10.1.105
 module swap openblas/0.2.20/gcc/7.2.0 netlib/3.8.0/gcc/7.2.0
 #export OMPI_CXX=`which g++`
 export OMPI_CXX=$WORKSPACE/Trilinos/packages/kokkos/bin/nvcc_wrapper
