@@ -678,6 +678,7 @@ class Test_setEnviron(unittest.TestCase):
                          mock.call('load', 'cuda/10.1.243'),
                          mock.call('load', 'gcc/7.2.0'),
                          mock.call('load', 'openblas/0.3.1/gcc/7.2.0'),
+                         mock.call('load', 'netlib/3.8.0/gcc/7.2.0'),
                          ]
         expected_env = {'OMPI_CXX':
                        os.path.join(self.jenkins_workspace,
