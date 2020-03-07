@@ -230,10 +230,8 @@ def setBuildEnviron(arguments):
                      'atdm-ninja_fortran/1.7.2'],
                 'Trilinos_pullrequest_cuda_9.2':
                      ['git/2.10.1',
-                     'cuda/10.1.243',
-                     'gcc/7.2.0',
-                     'openblas/0.3.1/gcc/7.2.0',
-                     'netlib/3.8.0/gcc/7.2.0']}
+                      'cuda/10.1.243',
+                      ('openblas/0.2.20/gcc/7.2.0', 'netlib/3.8.0/gcc/7.2.0')]}
 
     environMap = {'Trilinos_pullrequest_gcc_4.8.4':
                       {'OMP_NUM_THREADS': '2'},

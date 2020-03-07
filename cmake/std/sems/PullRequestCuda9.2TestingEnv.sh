@@ -5,9 +5,7 @@
 
 module load git/2.10.1
 module load cuda/10.1.243
-module load gcc/7.2.0
-module load openblas/0.3.1/gcc/7.2.0
-module load netlib/3.8.0/gcc/7.2.0 
+module swap openblas/0.2.20/gcc/7.2.0 netlib/3.8.0/gcc/7.2.0
 #export OMPI_CXX=`which g++`
 export OMPI_CXX=$WORKSPACE/Trilinos/packages/kokkos/bin/nvcc_wrapper
 export OMPI_CC=`which gcc`
