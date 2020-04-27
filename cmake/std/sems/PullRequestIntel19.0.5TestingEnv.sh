@@ -15,6 +15,7 @@ module load sems-git/2.10.1
 module load sems-gcc/6.1.0
 module load sems-intel/19.0.5
 module load sems-mpich/3.2
+module load sems-openmpi/1.10.1
 module load sems-python/2.7.9
 module load sems-boost/1.63.0/base
 module load sems-zlib/1.2.8/base
