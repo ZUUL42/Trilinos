@@ -678,7 +678,6 @@ class Test_setEnviron(unittest.TestCase):
                          mock.call('load', 'sems-git/2.10.1'),
                          mock.call('load', 'sems-gcc/6.1.0'),
                          mock.call('load', 'sems-intel/19.0.5'),
-                         mock.call('load', 'sems-mpich/3.2'),
                          mock.call('load', 'sems-openmpi/1.10.1'),
                          mock.call('load', 'sems-python/2.7.9'),
                          mock.call('load', 'sems-boost/1.63.0/base'),
