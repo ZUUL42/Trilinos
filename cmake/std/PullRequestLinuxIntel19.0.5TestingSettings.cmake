@@ -20,4 +20,5 @@ set (ROL_example_poisson-inversion_example_01_MPI_1_DISABLE ON CACHE BOOL "Tempo
 
 include("${CMAKE_CURRENT_LIST_DIR}/PullRequestLinuxCommonTestingSettings.cmake")
 
-set (CMAKE_EXE_LINKER_FLAGS -fPIC)
+set (CMAKE_CXX_FLAGS -fPIC CACHE STRING "enable relocatable code")
+
