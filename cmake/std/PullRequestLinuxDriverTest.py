@@ -262,7 +262,11 @@ def setBuildEnviron(arguments):
                 "Trilinos_pullrequest_cuda_9.2":
                      ["git/2.10.1",
                      "devpack/20180521/openmpi/2.1.2/gcc/7.2.0/cuda/9.2.88",
-                      ("openblas/0.2.20/gcc/7.2.0", "netlib/3.8.0/gcc/7.2.0")]}
+                      ("openblas/0.2.20/gcc/7.2.0", "netlib/3.8.0/gcc/7.2.0")],
+                "Trilinos_pullrequest_cuda_10.1.105":
+                     ["git/2.10.1",
+                     "devpack/20190404/openmpi/4.0.1/gcc/7.2.0/cuda/10.1.105",
+                      ("openblas/0.3.4/gcc/7.4.0", "netlib/3.8.0/gcc/7.2.0")]}
 
     environMap = {
                  "Trilinos_pullrequest_gcc_4.8.4":
@@ -361,6 +365,34 @@ def setBuildEnviron(arguments):
                       {"SEMS_FORCE_LOCAL_COMPILER_VERSION": "5.3.0",
                        "OMP_NUM_THREADS": "2"},
                  "Trilinos_pullrequest_cuda_9.2":
+                      {"OMPI_CXX":
+                       os.path.join(os.environ["WORKSPACE"],
+                                    "Trilinos",
+                                    "packages",
+                                    "kokkos",
+                                    "bin",
+                                    "nvcc_wrapper"),
+                       "OMPI_CC": os.environ.get("CC", ""),
+                       "OMPI_FC": os.environ.get("FC", ""),
+                       "CUDA_LAUNCH_BLOCKING": "1",
+                       "CUDA_MANAGED_FORCE_DEVICE_ALLOC": "1",
+                       "PATH": os.path.join(os.path.sep,
+                                            "ascldap",
+                                            "users",
+                                            "rabartl",
+                                            "install",
+                                            "white-ride",
+                                            "cmake-3.11.2",
+                                            "bin") + os.pathsep +
+                               os.path.join(os.path.sep,
+                                            "ascldap",
+                                            "users",
+                                            "rabartl",
+                                            "install",
+                                            "white-ride",
+                                            "ninja-1.8.2",
+                                            "bin")},
+                 "Trilinos_pullrequest_cuda_10.1.105":
                       {"OMPI_CXX":
                        os.path.join(os.environ["WORKSPACE"],
                                     "Trilinos",
@@ -617,6 +649,7 @@ config_map = {
     'Trilinos_pullrequest_clang_7.0.1':      'PullRequestLinuxClang7.0.1TestingSettings.cmake',
     'Trilinos_pullrequest_clang_9.0.0':      'PullRequestLinuxClang9.0.0TestingSettings.cmake',
     'Trilinos_pullrequest_cuda_9.2':         'PullRequestLinuxCuda9.2TestingSettings.cmake',
+    'Trilinos_pullrequest_cuda_10.1.105':    'PullRequestLinuxCuda10.1.105TestingSettings.cmake',
     'Trilinos_pullrequest_python_2':         'PullRequestLinuxPython2.cmake',
     'Trilinos_pullrequest_python_3':         'PullRequestLinuxPython3.cmake'
     }
