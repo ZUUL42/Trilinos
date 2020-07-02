@@ -66,6 +66,7 @@ ELSE()
   SET(PNETCDF_ROOT "$ENV{PNETCDF_ROOT}")
 ENDIF()
 set (TPL_Netcdf_LIBRARIES "-L$ENV{NETCDF_ROOT}/lib;$ENV{NETCDF_ROOT}/lib/libnetcdf.a;${PNETCDF_ROOT}/lib/libpnetcdf.a;${TPL_HDF5_LIBRARIES}" CACHE STRING "Set by default for CUDA PR testing")
+
 # SuperLU and SuperLUDist is available on ride and could be enabled for the CUDA PR build
 set (TPL_ENABLE_SuperLU OFF CACHE BOOL "Set by default for CUDA PR testing")
 set (TPL_ENABLE_SuperLUDist OFF CACHE BOOL "Set by default for CUDA PR testing")
@@ -74,8 +75,7 @@ set (TPL_ENABLE_Matio OFF CACHE BOOL "Set by default for CUDA PR testing")
 set (TPL_DLlib_LIBRARIES "-ldl" CACHE FILEPATH "Set by default for CUDA PR testing")
 
 # Disable some packages that can't be tested with this PR build
-set (Trilinos_ENABLE_ShyLU_NodeTacho OFF CACHE BOOL
-  "Can't test Tacho with CUDA without RDC" FORCE)
+set (Trilinos_ENABLE_ShyLU_NodeTacho OFF CACHE BOOL "Can't test Tacho with CUDA without RDC" FORCE)
 
 # Temporary options to clean up build
 set (Teko_ModALPreconditioner_MPI_1_DISABLE ON CACHE BOOL "Temporary disable for CUDA PR testing")

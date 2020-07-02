@@ -5,6 +5,7 @@
 
 module load git/2.10.1
 module load devpack/20190404/openmpi/4.0.1/gcc/7.2.0/cuda/10.1.105
+module swap cuda/10.1.105 cuda/10.1.243
 module swap openblas/0.3.4/gcc/7.4.0 netlib/3.8.0/gcc/7.2.0
 #export OMPI_CXX=`which g++`
 current_dir=`dirname $BASH_SOURCE`
