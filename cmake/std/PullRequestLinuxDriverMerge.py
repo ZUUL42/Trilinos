@@ -77,18 +77,22 @@ def parseArgs():
     parser.add_argument('sourceSHA',
                         help='SHA1 of the commit to use from the source branch',
                         action='store')
+    parser.add_argument('targetSHA',
+                        help='SHA1 of the commit to use from the target branch',
+                        action='store')
     parser.add_argument('workspaceDir',
                         help='The local workspace directory jenkins set up')
 
     return parser.parse_args()
 
 
-def merge_branch(source_url, source_branch, target_branch, sourceSHA):
+def merge_branch(source_url, source_branch, target_branch, sourceSHA, targetSHA):
 
     source_url    = source_url.strip()
     source_branch = source_branch.strip()
     target_branch = target_branch.strip()
     sourceSHA     = sourceSHA.strip()
+    targetSHA     = targetSHA.strip()
 
     remote_list = subprocess.check_output(['git', 'remote', '-v'])
 
@@ -119,19 +123,31 @@ def merge_branch(source_url, source_branch, target_branch, sourceSHA):
     subprocess.check_call(['git', 'merge', '--no-edit', 'source_remote/' + source_branch]),
 
     actual_source_SHA = subprocess.check_output(['git', 'rev-parse', 'source_remote/' + source_branch])
+    actual_target_SHA = subprocess.check_output(['git', 'rev-parse', 'target_remote/' + target_branch])
 
     if isinstance(actual_source_SHA, bytes):
         actual_source_SHA = actual_source_SHA.decode('utf-8')
 
-    actual_source_SHA = actual_source_SHA.strip()
+    if isinstance(actual_target_SHA, bytes):
+        actual_target_SHA = actual_target_SHA.decode('utf-8')
 
-    if actual_source_SHA != sourceSHA:
+    actual_source_SHA = actual_source_SHA.strip()
+    actual_target_SHA = actual_target_SHA.strip()
+
+
+    if (sourceSHA != "ABC") and (actual_source_SHA != sourceSHA):
         print('The SHA ({source_sha}) for the last commit on branch {source_branch}'.format(source_sha=actual_source_SHA,
                                                                                             source_branch=source_branch), file=sys.stdout)
         print('  in repo {source_repo} is different than the expected SHA,'.format(source_repo=source_url), file=sys.stdout)
         print('  which is: {source_sha}.'.format(source_sha=sourceSHA), file=sys.stdout)
         raise SystemExit(-1)
 
+    if (targetSHA != "XYZ") and (actual_target_SHA != targetSHA):
+        print('The SHA ({target_sha}) for the last commit on branch {target_branch}'.format(target_sha=actual_target_SHA,
+                                                                                            target_branch=target_branch), file=sys.stdout)
+        print('  in repo {target_repo} is different than the expected SHA,'.format(target_repo=source_url), file=sys.stdout)
+        print('  which is: {target_sha}.'.format(target_sha=targetSHA), file=sys.stdout)
+        raise SystemExit(-1)
 
 def run():
     return_value = True
@@ -150,7 +166,8 @@ def run():
             merge_branch(arguments.sourceRepo,
                          arguments.sourceBranch,
                          arguments.targetBranch,
-                         arguments.sourceSHA)
+                         arguments.sourceSHA,
+                         arguments.targetSHA)
         except SystemExit:
             return_value = False
         except subprocess.CalledProcessError as cpe:
