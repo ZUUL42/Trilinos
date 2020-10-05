@@ -242,7 +242,7 @@ def setBuildEnviron(arguments):
                      ["sems-env",
                      "sems-git/2.10.1",
                      "sems-gcc/5.3.0",
-                     "sems-intel/17.0.1",
+                     "sems-intel/18.0.5",
                      "sems-mpich/3.2",
                      "sems-python/2.7.9",
                      "sems-boost/1.63.0/base",

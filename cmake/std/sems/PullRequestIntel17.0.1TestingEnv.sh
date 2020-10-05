@@ -12,7 +12,7 @@ source /projects/sems/modulefiles/utils/sems-modules-init.sh
 
 export SEMS_FORCE_LOCAL_COMPILER_VERSION=4.9.3
 module load sems-gcc/5.3.0
-module load sems-intel/17.0.1
+module load sems-intel/18.0.5
 module load sems-mpich/3.2
 module load sems-python/2.7.9
 module load sems-git/2.10.1
