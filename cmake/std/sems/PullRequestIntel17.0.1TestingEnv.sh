@@ -1,8 +1,8 @@
 # This script can be used to load the appropriate environment for the
-# GCC 4.9.3 Pull Request testing build on a Linux machine that has access to
+# Intel 17.0.1 Pull Request testing build on a Linux machine that has access to
 # the SEMS NFS mount.
 
-# usage: $ source PullRequestGCC4.9.3TestingEnv.sh
+# usage: $ source PullRequestIntel17.0.1TestingEnv.sh
 
 # After the environment is no longer needed, it can be purged using
 # $ module purge
@@ -10,7 +10,7 @@
  
 source /projects/sems/modulefiles/utils/sems-modules-init.sh
 
-export SEMS_FORCE_LOCAL_COMPILER_VERSION=4.9.3
+export SEMS_FORCE_LOCAL_COMPILER_VERSION=5.3.0
 module load sems-gcc/5.3.0
 module load sems-intel/17.0.1
 module load sems-mpich/3.2

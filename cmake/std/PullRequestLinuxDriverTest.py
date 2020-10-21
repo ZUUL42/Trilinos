@@ -255,6 +255,23 @@ def setBuildEnviron(arguments):
                      "sems-cmake/3.10.3",
                      "atdm-env",
                      "atdm-ninja_fortran/1.7.2"],
+                "Trilinos_pullrequest_intel_19.0.5":
+                     ["sems-env",
+                     "sems-git/2.10.1",
+                     "sems-gcc/6.1.0",
+                     "sems-intel/19.0.5",
+                     "sems-openmpi/1.10.1",
+                     "sems-python/2.7.9",
+                     "sems-boost/1.69.0/base",
+                     "sems-zlib/1.2.8/base",
+                     "sems-hdf5/1.8.12/parallel",
+                     "sems-netcdf/4.4.1/exo_parallel",
+                     "sems-parmetis/4.0.3/parallel",
+                     "sems-superlu/4.3/base",
+                     "sems-cmake/3.17.1",
+                     "sems-ninja_fortran/1.10.0",
+                     "trilinos-env",
+                     "trilinos-scotch/6.0.3/nopthread_64bit_parallel"],
                 "Trilinos_pullrequest_clang_7.0.1":
                      ["sems-env",
                      "sems-git/2.10.1",
@@ -392,20 +409,23 @@ def setBuildEnviron(arguments):
                                             "extras"
                                             "bin")},
                  "Trilinos_pullrequest_gcc_7.2.0":
-                      {"SEMS_FORCE_LOCAL_COMPILER_VERSION": "4.9.3",
+                      {"SEMS_FORCE_LOCAL_COMPILER_VERSION": "5.3.0",
                        "OMP_NUM_THREADS": "2"},
                  "Trilinos_pullrequest_gcc_7.2.0_debug":
-                      {"SEMS_FORCE_LOCAL_COMPILER_VERSION": "4.9.3",
+                      {"SEMS_FORCE_LOCAL_COMPILER_VERSION": "5.3.0",
                        "OMP_NUM_THREADS": "2"},
                  "Trilinos_pullrequest_gcc_7.2.0_serial":
-                      {"SEMS_FORCE_LOCAL_COMPILER_VERSION": "4.9.3",
+                      {"SEMS_FORCE_LOCAL_COMPILER_VERSION": "5.3.0",
                        "OMP_NUM_THREADS": "2"},
                  "Trilinos_pullrequest_gcc_8.3.0":
-                      {"SEMS_FORCE_LOCAL_COMPILER_VERSION": "4.9.3",
+                      {"SEMS_FORCE_LOCAL_COMPILER_VERSION": "5.3.0",
                        "OMP_NUM_THREADS": "2"},
                  "Trilinos_pullrequest_intel_17.0.1":
-                      {"SEMS_FORCE_LOCAL_COMPILER_VERSION": "4.9.3",
+                      {"SEMS_FORCE_LOCAL_COMPILER_VERSION": "5.3.0",
                        "OMP_NUM_THREADS": "2"},
+                 'Trilinos_pullrequest_intel_19.0.5':
+                      {'SEMS_FORCE_LOCAL_COMPILER_VERSION': '6.1.0',
+                       'OMP_NUM_THREADS': '2'},
                  "Trilinos_pullrequest_clang_7.0.1":
                       {"SEMS_FORCE_LOCAL_COMPILER_VERSION": "5.3.0",
                        "OMP_NUM_THREADS": "2"},
@@ -665,7 +685,8 @@ def generateBuildNameString(arguments):
 
 config_map = {
     'Trilinos_pullrequest_gcc_4.8.4':        'PullRequestLinuxGCC4.8.4TestingSettings.cmake',
-    'Trilinos_pullrequest_intel_17.0.1':     'PullRequestLinuxIntelTestingSettings.cmake',
+    'Trilinos_pullrequest_intel_17.0.1':     'PullRequestLinuxIntel17.0.1TestingSettings.cmake',
+    'Trilinos_pullrequest_intel_19.0.5':     'PullRequestLinuxIntel19.0.5TestingSettings.cmake',
     'Trilinos_pullrequest_gcc_4.9.3_SERIAL': 'PullRequestLinuxGCC4.9.3TestingSettingsSERIAL.cmake',
     'Trilinos_pullrequest_gcc_7.2.0':        'PullRequestLinuxGCC7.2.0TestingSettings.cmake',
     'Trilinos_pullrequest_gcc_7.2.0_debug':  'PullRequestLinuxGCC7.2.0DebugTestingSettings.cmake',
