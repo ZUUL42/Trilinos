@@ -22,4 +22,6 @@ set (ROL_example_poisson-inversion_example_01_MPI_1_DISABLE ON CACHE BOOL "Tempo
 
 include("${CMAKE_CURRENT_LIST_DIR}/PullRequestLinuxCommonTestingSettings.cmake")
 
+set (TPL_Netcdf_LIBRARIES "-L${Netcdf_LIBRARY_DIRS}/lib;${Netcdf_LIBRARY_DIRS}/libnetcdf.so;${Netcdf_LIBRARY_DIRS}/libpnetcdf.a" CACHE STRING "Set by default for CUDA PR testing")
+
 set (CMAKE_CXX_FLAGS -fPIC CACHE STRING "enable relocatable code")
