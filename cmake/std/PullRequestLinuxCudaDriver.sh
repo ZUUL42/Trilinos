@@ -14,7 +14,7 @@ fi
 set -x
 
 #TODO: review appropriate job size
-bsub -x -Is -q rhel7F -n 16 -J ${JOB_NAME} -W ${BSUB_CTEST_TIME_LIMIT} \
+bsub -x -Is -q rhel7G -n 16 -J ${JOB_NAME} -W ${BSUB_CTEST_TIME_LIMIT} \
   ${WORKSPACE}/Trilinos/cmake/std/PullRequestLinuxDriver.sh
 
 # NOTE: Above, this bsub command should grab a single rhel7F (Firestone,
