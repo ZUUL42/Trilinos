@@ -16,7 +16,6 @@ set (CTEST_USE_LAUNCHERS ON CACHE BOOL "Set by default for PR testing")
 # Options necessary for CUDA build
 set (TPL_ENABLE_MPI ON CACHE BOOL "Set by default for CUDA PR testing")
 set (Kokkos_ENABLE_CUDA ON CACHE BOOL "Set by default for CUDA PR testing")
-set (Kokkos_ENABLE_CUDA_UVM ON CACHE BOOL "Set by default for CUDA PR testing")
 set (KOKKOS_ARCH Power8,Pascal60 CACHE STRING "Set by default for CUDA PR testing")
 set (Kokkos_ENABLE_CUDA_RELOCATABLE_DEVICE_CODE OFF CACHE BOOL "Set by default for CUDA PR testing")
 set (Sacado_ENABLE_HIERARCHICAL_DFAD ON CACHE BOOL "Set by default for CUDA PR testing")
@@ -136,5 +135,8 @@ set (Intrepid2_unit-test_Discretization_Basis_HierarchicalBases_Hierarchical_Bas
 set (Teko_testdriver_tpetra_MPI_1_DISABLE ON CACHE BOOL "Temporary disable for CUDA PR testing")
 set (Teko_testdriver_tpetra_MPI_4_DISABLE ON CACHE BOOL "Temporary disable for CUDA PR testing")
 
+# UVM off
+set (Kokkos_ENABLE_CUDA_UVM OFF CACHE BOOL "Set by default for CUDA PR testing")
+set (Tpetra_ENABLE_CUDA_UVM OFF CACHE BOOL "Set by default for CUDA PR testing")
 
 include("${CMAKE_CURRENT_LIST_DIR}/PullRequestLinuxCommonTestingSettings.cmake")
