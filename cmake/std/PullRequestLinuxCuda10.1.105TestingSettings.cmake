@@ -8,6 +8,12 @@
 
 set (CMAKE_CXX_STANDARD "14" CACHE STRING "Set C++ standard to C++14")
 
+# Turn off packages to get a clean PR build
+set (Trilinos_ENABLE_Panzer OFF CACHE BOOL "Turn off packages for UVM build")
+set (Trilinos_ENABLE_Stokhos OFF CACHE BOOL "Turn off packages for UVM build")
+set (Trilinos_ENABLE_Intrepid2 OFF CACHE BOOL "Turn off packages for UVM build")
+set (Trilinos_ENABLE_TrilinosCouplings OFF CACHE BOOL "Turn off packages for UVM build")
+
 # Misc options typically added by CI testing mode in TriBITS
 
 # Use the below option only when submitting to the dashboard
