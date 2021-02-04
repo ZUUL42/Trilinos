@@ -41,5 +41,7 @@ set(Rythmos_StepperBuilder_UnitTest_MPI_1_DISABLE ON CACHE BOOL "Temporarily dis
 # ETI = OFF Issue #5729
 set (Trilinos_ENABLE_EXPLICIT_INSTANTIATION OFF CACHE STRING "ETI = OFF")
 # looking at details while setting up ETI = OFF build
+set (CMAKE_BUILD_PARALLEL_LEVEL "2" CACHE STRING "Lowered for ETI=OFF")
+set (Trilinos_ENABLE_Tempus OFF CACHE BOOL "Temporarily disabled for testing")
 
 include("${CMAKE_CURRENT_LIST_DIR}/PullRequestLinuxCommonTestingSettings.cmake")
