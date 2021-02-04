@@ -37,3 +37,9 @@ set(FEI_multifield_vbr_az_MPI_2_DISABLE ON CACHE BOOL "Temporarily disabled in P
 set(FEI_multifield_vbr_az_MPI_3_DISABLE ON CACHE BOOL "Temporarily disabled in PR testing")
 set(ROL_example_PinT_parabolic-control_example_01_MPI_1_DISABLE ON CACHE BOOL "Temporarily disabled in PR testing")
 set(Rythmos_StepperBuilder_UnitTest_MPI_1_DISABLE ON CACHE BOOL "Temporarily disabled in PR testing")
+
+# ETI = OFF Issue #5729
+set (Trilinos_ENABLE_EXPLICIT_INSTANTIATION OFF CACHE STRING "ETI = OFF")
+# looking at details while setting up ETI = OFF build
+
+include("${CMAKE_CURRENT_LIST_DIR}/PullRequestLinuxCommonTestingSettings.cmake")
